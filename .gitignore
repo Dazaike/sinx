@@ -1,0 +1,39 @@
+# Android build outputs
+*.apk
+*.aab
+*.dex
+*.class
+build/
+.gradle/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+*.iws
+*.ipr
+out/
+
+# Kotlin
+.kotlin/
+
+# Windows
+Thumbs.db
+Desktop.ini
+windows/dist-native/
+windows/native/bin/
+windows/native/obj/
+windows/*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+windows/.venv/
+windows/*.egg-info/
+
+# macOS
+.DS_Store

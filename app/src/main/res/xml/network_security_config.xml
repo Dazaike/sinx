@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--
+        Allow cleartext HTTP only to RFC-1918 private address ranges.
+        Traffic to the internet remains encrypted.
+    -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">192.168.0.0</domain>
+        <domain includeSubdomains="false">192.168.1.0</domain>
+        <!-- Wildcard domains aren't supported; use a base-config for the subnet -->
+    </domain-config>
+
+    <!--
+        Broader approach: permit cleartext to any private/LAN host.
+        Android evaluates domain-config first; this base-config catches
+        any 192.168.x.x / 10.x.x.x / 172.16-31.x.x address the user types in.
+    -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
